@@ -1,0 +1,165 @@
+{
+  "project_name": "Four Lost Cats Cafe",
+  "art_direction": "Playful Color-Block Modernism",
+  "tagline": "The Coolest Café in Town",
+  "theme": "color-blocked (dynamic scroll-driven transition from dark to light)",
+  "typography": {
+    "display": "Outfit (sans-serif, bold/black)",
+    "headings": "Fraunces (serif, italic moments)",
+    "body": "Plus Jakarta Sans (geometric sans)",
+    "monospace": "JetBrains Mono (prices, menu data)",
+    "nav": "Inter (clean sans)",
+    "handwritten": "Caveat (cat quotes, playful notes)",
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl md:text-8xl lg:text-[10vw] leading-none tracking-tighter uppercase font-black font-outfit",
+      "h2": "text-4xl md:text-6xl tracking-tight font-fraunces italic",
+      "h3": "text-2xl md:text-4xl font-outfit font-bold",
+      "body": "text-base md:text-lg font-plus-jakarta leading-relaxed",
+      "menu_price": "text-sm md:text-base font-jetbrains tracking-widest text-amber-gold",
+      "quote": "text-2xl md:text-4xl font-caveat text-sage"
+    }
+  },
+  "colors": {
+    "backgrounds": {
+      "deep_blue_start": "#1B3A5C",
+      "deep_blue_end": "#2B5A8C",
+      "warm_peach_start": "#F5A882",
+      "warm_peach_mid": "#FFB899",
+      "warm_peach_end": "#FCCAB4",
+      "paper_white": "#FFF8F0",
+      "charcoal": "#1A1A2E"
+    },
+    "accents": {
+      "amber_gold_start": "#E8A838",
+      "amber_gold_end": "#F0B848",
+      "espresso": "#3D2B1F",
+      "sage": "#7A9B76"
+    },
+    "text": {
+      "primary_light": "#FFF8F0",
+      "primary_dark": "#1A1A2E",
+      "muted_light": "rgba(255,248,240,0.7)",
+      "muted_dark": "rgba(26,26,46,0.7)"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl (dark surfaces) OR backdrop-blur-2xl bg-black/5 border border-black/10 (light surfaces)",
+    "textures": "Subtle noise/grain overlay (pointer-events-none) across the entire site to prevent digital flatness.",
+    "borders": "Rounded soft radii (rounded-3xl) for menu cards; sharp edges for overarching layout sections to emphasize color-blocking.",
+    "shadows": "Deep, saturated ambient shadows instead of gray dropshadows (e.g., shadow-[0_20px_50px_rgba(27,58,92,0.4)])"
+  },
+  "components_strategy": {
+    "navigation": "Sticky glassmorphism header (z-50). Fully transparent at top, frosted glass on scroll. Uses Inter font, simple text links, and a pill-shaped Amber Gold CTA. DO NOT use completely transparent background when scrolled over content.",
+    "hero": "Three.js (R3F) full-viewport canvas. Floating paper lanterns emitting soft ethereal light, ambient particles. Massive 'FOUR LOST CATS' title with framer-motion masked line-by-line reveal.",
+    "cards": "Tabbed Menu: Frosted glass cards with 3D tilt effect on hover. Real product photography treated deliberately (spotlight, clipped frames).",
+    "buttons": "Pill-shaped backgrounds. Amber Gold gradient, Charcoal text. Scale up 1.05 on hover with subtle colored shadow.",
+    "marquee": "Slow editorial text ticker running horizontally, overlapping section borders. Uses outline typography."
+  },
+  "layouts": {
+    "general": "Section-based color blocking. Scroll transition triggering background color changes (Deep Blue -> Warm Peach).",
+    "spacing": "Massive padding. py-32 to py-48 for major sections. gap-12 to gap-24 for grid items. Use 'breathing room' generously.",
+    "grid_modes": {
+      "origin_story": "Split screen. Left: sticky numbered manifesto chapters. Right: scrolling images.",
+      "gallery": "Horizontal scrolling section pinned via Framer Motion useScroll. Images taking 70vh, varying widths.",
+      "menu": "Bento-style 3-column grid, tight spacing. Highly legible list formats for 32 items.",
+      "architecture": "Zig-zag layout, overlapping images and text to replicate the physical split level of the cafe."
+    }
+  },
+  "motion": {
+    "scrolling": "Lenis for buttery smooth momentum scrolling. Mandatory for Awwwards feel.",
+    "reveals": "Framer motion: masked text reveals (initial {y: '100%'} animate {y: '0%'} with overflow hidden wrappers).",
+    "parallax": "Subtle mouse parallax on hero cat silhouette. Image parallax (y transform) on scroll for gallery elements.",
+    "micro_interactions": "Magnetic effect on nav links, 3D tilt on cards.",
+    "loading": "Immersive 3D loading screen (0-100% counter) dissolving into the Three.js hero."
+  },
+  "3d_libraries": {
+    "primary": "@react-three/fiber, @react-three/drei",
+    "instructions": "Place <Canvas> as a fixed or absolute background. Use <Environment> for realistic lighting on floating paper lantern geometries. Add simple glowing particles. Keep performance high with suspense."
+  },
+  "blueprint": {
+    "section_1_hero": "Loading screen -> Three.js Hero. Masked text reveal. Mouse-tracking parallax.",
+    "section_2_origin": "Origin story split section. Manifesto chapters. Blue background.",
+    "section_3_architecture": "Scroll-triggered gradient from Deep Blue to Warm Peach. Zigzag images of interior.",
+    "section_4_menu": "Interactive tabbed menu showcase. 32 items, 7 categories. Glass cards.",
+    "section_5_events": "Event space showcase with floating elements.",
+    "section_6_gallery": "Immersive horizontal-scroll gallery.",
+    "section_7_testimonials": "Auto-scrolling testimonials ticker + animated stat counters.",
+    "section_8_visit_footer": "Charcoal Visit Us info hub. Instagram grid. Cat-themed footer with easter egg tail, editorial marquee."
+  },
+  "accessibility": {
+    "contrast": "Ensure text over gradients meets APCA standards. Apply text-shadow if needed.",
+    "attributes": "All interactive elements MUST have data-testid attributes (e.g., data-testid='hero-cta-btn').",
+    "motion": "Respect prefers-reduced-motion media query."
+  },
+  "image_urls": {
+    "hero_and_textures": [
+      {
+        "url": "https://images.pexels.com/photos/10935233/pexels-photo-10935233.jpeg",
+        "description": "Paper lanterns floating in night sky. Use as reference/texture for 3D elements.",
+        "category": "texture"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1760802236067-bf3adc800b1d",
+        "description": "White paper lantern for ethereal lighting reference.",
+        "category": "hero_texture"
+      }
+    ],
+    "interior_architecture": [
+      {
+        "url": "https://images.pexels.com/photos/18288606/pexels-photo-18288606.jpeg",
+        "description": "Stylish coffee shop neon blue hue. Lower level architectural representation.",
+        "category": "interior_blue"
+      },
+      {
+        "url": "https://images.pexels.com/photos/32108586/pexels-photo-32108586.jpeg",
+        "description": "Elegant cafe corner warm peach/coral vibe. Upper level representation.",
+        "category": "interior_peach"
+      }
+    ],
+    "menu_items": [
+      {
+        "url": "https://images.unsplash.com/photo-1770123024494-776bc2d3836b",
+        "description": "Barista offers a cup of coffee with latte art.",
+        "category": "product_coffee"
+      },
+      {
+        "url": "https://images.pexels.com/photos/36946473/pexels-photo-36946473.jpeg",
+        "description": "Skilled barista creating a delicate latte art pattern.",
+        "category": "product_coffee_detail"
+      }
+    ],
+    "cats": [
+      {
+        "url": "https://images.unsplash.com/photo-1750712406245-7fc731457ed6",
+        "description": "A fluffy cat reclines comfortably.",
+        "category": "cat_fluffy"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1696995664102-455684f52be0",
+        "description": "Cat laying on table next to coffee.",
+        "category": "cat_coffee"
+      },
+      {
+        "url": "https://images.pexels.com/photos/37441128/pexels-photo-37441128.jpeg",
+        "description": "Grey tabby cat sleeping comfortably outdoors.",
+        "category": "cat_sleeping"
+      }
+    ]
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "NEVER use generic centered layouts or simplistic flat gradients. Create depth through layered design elements with z-index hierarchy.",
+    "Avoid the 'AI slop' aesthetic. Make creative, distinctive frontends that surprise and delight.",
+    "Do NOT apply universal transitions (e.g., transition: all). Apply transitions explicitly to avoid breaking transforms.",
+    "Do NOT center align the app container (.App { text-align: center; }). Preserve natural reading flow.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations.",
+    "Use 2-3x more spacing than feels comfortable. Generous padding creates a premium feel.",
+    "Use Lenis for smooth momentum scrolling and Framer Motion for scroll-reveals.",
+    "Use the provided image_urls. Missing categories MUST NOT be replaced by dummy placeholder text or generic placeholder URLs.",
+    "All interactive elements MUST include a data-testid attribute for automated testing.",
+    "Always explicitly set text color on hover. Do not rely on inheritance.",
+    "Provide clear focus states for accessibility.",
+    "Ensure 3D scenes have adequate lighting so objects are clearly visible.",
+    "Incorporate the required fonts via Google Fonts import in CSS.",
+    "When customizing shadcn/ui components, strip the 'Vercel-look' and apply the Four Lost Cats brand styling (color-blocking, glassmorphism, bold borders)."
+  ]
+}
