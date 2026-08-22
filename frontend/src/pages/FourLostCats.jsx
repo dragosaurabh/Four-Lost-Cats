@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import MobileCTABar from "@/components/MobileCTABar";
+import PawCursor from "@/components/PawCursor";
 import Hero from "@/components/sections/Hero";
 import Origin from "@/components/sections/Origin";
 import Design from "@/components/sections/Design";
@@ -40,6 +41,7 @@ export default function FourLostCats() {
       <InstagramFeed />
       <Footer />
       <MobileCTABar />
+      <PawCursor />
     </main>
   );
 }
